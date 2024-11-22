@@ -17,8 +17,7 @@
 
 #pragma once
 
-/* Handedness. */
-#define MASTER_RIGHT
+#define MASTER_LEFT
 
 // To use the handedness pin, resistors need to be installed on the adapter PCB.
 // If so, uncomment the following code, and undefine MASTER_RIGHT above.
@@ -29,3 +28,9 @@
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED GP17
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U
+
+#define PERMISSIVE_HOLD
+#define QUICK_TAP_TERM 200
+#define CAPS_WORD_INVERT_ON_SHIFT
+#define TAPPING_TERM 200
+#define WAIT_FOR_USB
