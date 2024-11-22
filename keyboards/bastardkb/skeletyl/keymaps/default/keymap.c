@@ -359,8 +359,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 combo_t key_combos[] = {
-    COMBO(combo0, KC_LEFT_GUI),
-    COMBO(combo1, KC_LEFT_GUI),
+    COMBO(combo0, KC_CAPS),
+    COMBO(combo1, KC_CAPS),
     COMBO(combo2, UA_32),
     COMBO(combo3, UA_33),
     COMBO(combo4, UA_34),
