@@ -178,8 +178,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO,
             KC_NO,
             KC_NO,
-            KC_NO,
-            KC_NO,
+            LCTL(KC_W),
+            LCTL(KC_Z),
             KC_PSCR,
             KC_F7,
             KC_F8,
@@ -197,11 +197,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_F6,
             KC_F11,
 
+            KC_ENT,
+            LCTL(KC_X),
             KC_NO,
-            KC_NO,
-            KC_NO,
-            KC_NO,
-            KC_NO,
+            LCTL(KC_C),
+            LCTL(KC_V),
             KC_NO,
             KC_F1,
             KC_F2,
@@ -348,3 +348,38 @@ bool caps_word_press_user(uint16_t keycode) {
     }
 }
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case ALT_T(KC_PLUS):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_PLUS);
+                return false;
+            }
+            break;
+        case SFT_T(KC_LPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LPRN);
+                return false;
+            }
+            break;
+        case CTL_T(KC_RPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_RPRN);
+                return false;
+            }
+            break;
+        case GUI_T(KC_LCBR):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LCBR);
+                return false;
+            }
+            break;
+        case ALT_T(KC_RCBR):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_RCBR);
+                return false;
+            }
+            break;
+    }
+    return true;
+}
